@@ -1,10 +1,16 @@
 import 'package:blog_app_clean/config/theme/pallet_color.dart';
 import 'package:blog_app_clean/core/widgets/custom_elevated_button_widget.dart';
+import 'package:blog_app_clean/features/auth/presentation/screens/signin_screen.dart';
 import 'package:blog_app_clean/features/auth/presentation/widgets/auth_text_field_widget.dart';
 import 'package:flutter/material.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
+  static Route route = MaterialPageRoute(
+    builder: (context) {
+      return const SignupScreen();
+    },
+  );
 
   @override
   State<SignupScreen> createState() => _SignupScreenState();
@@ -26,6 +32,7 @@ class _SignupScreenState extends State<SignupScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // appBar: AppBar(),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -78,14 +85,19 @@ class _SignupScreenState extends State<SignupScreen> {
                 const SizedBox(
                   height: 15,
                 ),
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("Already have an account?  "),
-                    Text(
-                      "Sign in",
-                      style: TextStyle(
-                        color: PalletColor.gradiant3,
+                    const Text("Already have an account?  "),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(context, SigninScreen.route);
+                      },
+                      child: const Text(
+                        "Sign in",
+                        style: TextStyle(
+                          color: PalletColor.gradiant3,
+                        ),
                       ),
                     ),
                   ],
