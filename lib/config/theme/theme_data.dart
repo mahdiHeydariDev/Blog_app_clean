@@ -13,15 +13,18 @@ class AppThemeData {
   }
 
   static ThemeData themeData = ThemeData.dark().copyWith(
-    scaffoldBackgroundColor: PalletColor.scafFoldBackGround,
-    inputDecorationTheme: InputDecorationTheme(
-      contentPadding: const EdgeInsets.all(27),
-      border: border(),
-      enabledBorder: border(),
-      focusedBorder: border(color: PalletColor.gradiant2),
-      errorBorder: border(color: PalletColor.errorColor),
-      iconColor: PalletColor.gradiant2,
-      prefixIconColor: PalletColor.gradiant2,
-    ),
-  );
+      scaffoldBackgroundColor: PalletColor.scafFoldBackGround,
+      inputDecorationTheme: InputDecorationTheme(
+        contentPadding: const EdgeInsets.all(27),
+        border: border(),
+        enabledBorder: border(),
+        focusedBorder: border(color: PalletColor.gradiant2),
+        errorBorder: border(color: PalletColor.errorColor),
+        iconColor: PalletColor.gradiant2,
+        prefixIconColor: PalletColor.gradiant2,
+      ),
+      appBarTheme: const AppBarTheme(
+        backgroundColor: PalletColor.scafFoldBackGround,
+        elevation: 0,
+      ));
 }
